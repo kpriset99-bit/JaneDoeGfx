@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jane Doe — ZZZ Fan Page</title>
+  <style>
+    :root{
+      --bg:#0b0d12;          /* base background */
+      --panel:#121521;       /* surface */
+      --muted:#8a92a6;       /* secondary text */
+      --text:#e8ecf7;        /* primary text */
+      --accent:#6be5ff;      /* neon blue */
+      --accent2:#a78bfa;     /* soft purple */
+      --ring: 0 0 0 2px var(--accent);
+      --radius: 16px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Noto Sans",sans-serif;}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%;height:auto;border-radius:12px}
+    .container{width:min(1120px,92%);margin-inline:auto}
+    .btn{display:inline-block;padding:.9rem 1.2rem;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#0a0a0a;font-weight:700;box-shadow:0 8px 24px rgba(107,229,255,.2);transition:.25s transform, .25s box-shadow}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(167,139,250,.25)}/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(11,13,18,.6);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:800;letter-spacing:.5px}
+.logo-badge{width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 0 0 3px rgba(255,255,255,.08) inset}
+nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
+nav a{padding:.6rem .9rem;border-radius:12px;color:var(--muted);font-weight:600}
+nav a.active, nav a:hover{color:var(--text);background:rgba(255,255,255,.06)}
+
+/* Hero */
+.hero{position:relative;padding:72px 0 36px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto -10%;height:420px;background:radial-gradient(ellipse at 50% 50%, rgba(107,229,255,.35), transparent 60%), radial-gradient(ellipse at 20% 0%, rgba(167,139,250,.25), transparent 55%);filter:blur(40px);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns: 1.1fr .9fr;gap:28px;align-items:center}
+.hero h1{font-size:clamp(32px,5vw,52px);line-height:1.05;margin:0 0 12px}
+.hero p{color:var(--muted);font-size:1.05rem;margin:0 0 20px}
+
+.card{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+
+.mock-img{aspect-ratio: 4/5; border-radius:14px; position:relative; background:linear-gradient(180deg, #1c2233, #0f1320); display:grid;place-items:center}
+.mock-img::after{content:"JANE";font-weight:900;letter-spacing:10px;font-size:clamp(28px,6vw,52px);color:rgba(255,255,255,.06)}
+
+/* Info */
+.info{padding:42px 0}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.kvs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.kv{padding:14px;border-radius:12px;background:#0f1220;border:1px solid rgba(255,255,255,.06)}
+.kv .k{color:var(--muted);font-size:.85rem}
+.kv .v{font-weight:700;margin-top:6px}
+
+/* Gallery */
+.gallery{padding:42px 0}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.thumb{position:relative;overflow:hidden;border-radius:12px;border:1px solid rgba(255,255,255,.08)}
+.thumb::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(107,229,255,.15));opacity:0;transition:.3s}
+.thumb:hover::before{opacity:1}
+
+/* Fanboard */
+.fan{padding:42px 0}
+.input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.09);background:#0e1220;color:var(--text)}
+.row{display:flex;gap:10px}
+
+/* Footer */
+footer{padding:36px 0;border-top:1px solid rgba(255,255,255,.06);color:var(--muted)}
+
+/* Responsive */
+@media (max-width: 900px){
+  .hero-grid, .grid-2{grid-template-columns:1fr}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width: 560px){
+  nav ul{display:none}
+  .grid-3{grid-template-columns:1fr}
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo"><div class="logo-badge"></div><span>Jane Project</span></div>
+      <nav>
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#info">Info</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#fanboard">Fanboard</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Jane Doe <span style="color:var(--accent)">— ZZZ</span></h1>
+          <p>Elegant, sharp, and a little dangerous. Fan page konsep bergaya futuristik untuk si *momy-cool* favorit lo. Scroll ke bawah buat lihat ringkasan karakter, galeri, dan papan pesan.</p>
+          <a class="btn" href="#gallery">Explore Gallery</a>
+        </div>
+        <div class="card">
+          <div class="card">
+  <img src="Profil.png" alt="Jane" class="mock-img">
+</div>
+          <div class="card">
+        </div>
+      </div>
+    </section><!-- INFO -->
+<section id="info" class="info">
+  <div class="container grid-2">
+    <div class="card">
+      <h2 style="margin-top:0">Character Info</h2>
+      <div class="kvs" style="margin-top:10px">
+        <div class="kv"><div class="k">Nama</div><div class="v">Jane Doe</div></div>
+        <div class="kv"><div class="k">Fraksi</div><div class="v">Penalty Team (rumor)</div></div>
+        <div class="kv"><div class="k">Peran</div><div class="v">Burst DPS / Hacker</div></div>
+        <div class="kv"><div class="k">Kepribadian</div><div class="v">Stoic, witty, protektif</div></div>
+        <div class="kv"><div class="k">Senjata</div><div class="v">Pisau hamster🗿</div></div>
+        <div class="kv"><div class="k">Aksen</div><div class="v" style="color:var(--accent)">Neon Blue</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3 style="margin:0 0 8px">Deskripsi</h3>
+      <p style="color:var(--muted)">Jane adalah figur tenang dengan sense of humor kering. Di balik ekspresi cuek, dia punya insting protektif—apalagi ke satu orang tertentu 😉. Style: techwear minimalis, palet biru-ungu.</p>
+      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+        <span style="padding:6px 10px;border:1px solid rgba(255,255,255,.12);border-radius:999px;color:var(--muted)">#neon</span>
+        <span style="padding:6px 10px;border:1px solid rgba(255,255,255,.12);border-radius:999px;color:var(--muted)">#zenless</span>
+        <span style="padding:6px 10px;border:1px solid rgba(255,255,255,.12);border-radius:999px;color:var(--muted)">#techwear</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="gallery">
+  <div class="container">
+    <h2 style="margin:0 0 16px">Gallery</h2>
+    <p style="color:var(--muted);margin:0 0 16px">Taruh gambar Jane di sini</p>
+  <img src="Jane1.png" alt="Jane" class="mock-img">
+</div>
+
+  <img src="Jane2.png" alt="Jane" class="mock-img">
+</div>
+
+  <img src="jane3.png" alt="Jane" class="mock-img">
+</div>
+
+  <img src="Jane4.png" alt="Jane" class="mock-img">
+</div>
+
+  <img src="Jane5.png" alt="Jane" class="mock-img">
+</div>
+
+  <img src="Jane6.png" alt="Jane" class="mock-img">
+</div>
+    </div>
+  </div>
+</section>
+
+<!-- FANBOARD -->
+<section id="fanboard" class="fan">
+  <div class="container">
+    <h2 style="margin:0 0 10px">Fanboard</h2>
+    <p style="color:var(--muted);margin:0 0 16px">Dummy area (belum backend). Cuma buat mockup interaksi: tulis pesan lalu klik "Post" → langsung nongol di bawah (client-side).</p>
+    <div class="card">
+      <div class="row">
+        <input id="fanInput" class="input" placeholder="Tulis pesan untuk Jane…" />
+        <button class="btn" id="postBtn" type="button">Post</button>
+      </div>
+      <ul id="fanList" style="margin:16px 0 0; padding:0; list-style:none; display:grid; gap:10px"></ul>
+    </div>
+  </div>
+</section>
+
+  </main>  <footer>
+    <div class="container">©2025 Indra × Jane Project — Made with ❤</div>
+  </footer>  <script>
+    // tiny fanboard mock
+    const input = document.getElementById('fanInput');
+    const list = document.getElementById('fanList');
+    document.getElementById('postBtn').addEventListener('click', () => {
+      const text = input.value.trim();
+      if(!text) return;
+      const li = document.createElement('li');
+      li.className = 'card';
+      li.style.padding = '12px 14px';
+      li.innerHTML = `<strong>Anon</strong><p style="margin:.25rem 0 0;color:var(--muted)">${text}</p>`;
+      list.prepend(li);
+      input.value = '';
+    });
+
+    // smooth scroll for nav
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href');
+        const el = document.querySelector(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+      })
+    })
+  </script></body>
+</html>
